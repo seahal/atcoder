@@ -1,35 +1,32 @@
 // 競技プログラミングの鉄則(ISBN: 978-4-8399-7750-4)
-// A11 - Binary Search 1
+// A11 - Binary Search 1, 復習, TLE
 
 fn main() {
     let mut s = String::new();
     let _ = std::io::stdin().read_line(&mut s);
-    let mut o = s.split_whitespace().collect::<Vec<_>>();
-    let N = o.first().unwrap().parse::<usize>().unwrap();
-    let X = o.last().unwrap().parse::<usize>().unwrap();
+    let mut o = s.split_whitespace();
+    let n = o.next().unwrap().parse::<usize>().unwrap();
+    let x = o.next().unwrap().parse::<usize>().unwrap();
 
     s.clear();
     let _ = std::io::stdin().read_line(&mut s);
-    let mut A = s
+    let a = s
         .split_whitespace()
         .flat_map(|o| o.parse::<usize>())
         .collect::<Vec<_>>();
 
-    let mut L: usize = 0;
-    let mut R: usize = N-1;
-    let mut result: usize = 0;
+    let mut left: usize = 0;
+    let mut right: usize = n;
 
-    while L <= R {
-        let m = (L + R) / 2;
-        if X < A[m] {
-            R = m - 1;
-        } else if X > A[m] {
-            L = m + 1;
+    while left <= right {
+        let mean = (left + right) / 2;
+        if a[mean] < x {
+            left = mean + 1;
+        } else if x < a[mean]  {
+            right = mean - 1;
         } else {
-            result = m;
+            println!("{}", mean + 1);
             break;
         }
     }
-
-    println!("{}", result + 1);
 }

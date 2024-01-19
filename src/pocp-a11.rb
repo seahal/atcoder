@@ -10,10 +10,10 @@ while left <= nr do
   mean = (left + nr) / 2
   if a[mean] < x
     left = mean + 1
-  elsif a[mean] == x
+  elsif x < a[mean]
+    nr = mean - 1
+  else
     puts mean + 1
     break;
-  else
-    nr = mean - 1
   end
 end
