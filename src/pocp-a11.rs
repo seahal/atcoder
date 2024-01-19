@@ -16,7 +16,7 @@ fn main() {
         .collect::<Vec<_>>();
 
     let mut L: usize = 0;
-    let mut R: usize = N;
+    let mut R: usize = N-1;
     let mut result: usize = 0;
 
     while L <= R {
