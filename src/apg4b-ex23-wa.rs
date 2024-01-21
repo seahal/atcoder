@@ -20,6 +20,11 @@ fn main() {
         dictorinay.insert(i, dictorinay.get(&i).unwrap_or(&0) + 1);
     }
 
+    if s.len() == 0 {
+        println!("0 0");
+        std::process::exit(0);
+    }
+
     let (x, y) = dictorinay.iter().last().unwrap();
     println!("{} {}", x, y);
 }
