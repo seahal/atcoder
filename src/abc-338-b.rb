@@ -1,3 +1,6 @@
+# AtCoder Beginner Contest 338
+# B - Frequency
+
 str = gets.chomp
 hash = Hash.new(0)
 str.scan(/[a-z]/).each {|v|
