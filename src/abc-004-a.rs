@@ -1,4 +1,5 @@
-// Rust の勉強をするで
+// AtCoder Beginner Contest 003
+// A
 
 fn main() {
     let mut buffer = String::new();
